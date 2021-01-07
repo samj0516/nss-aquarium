@@ -6,7 +6,9 @@
 .containerRight{
     background: rgb(144, 133, 181);
     justify-content: flex-end;
+    flex-direction: column;
     width: 30%;
+    align-self: stretch;
 }
 
 
