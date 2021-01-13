@@ -1,21 +1,44 @@
+body {
+    background-image: url("https://cdn.wallpapersafari.com/22/26/f1Im3Q.jpg");
+    background-size: cover;
+}
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    /* height: 50%; */
+    
+}
+header {
+    background-color: rgb(187, 244, 228);
+    opacity: .8;
+    height: 250px;
+}
 .contentContainer {
     display:flex;
-    
-    
 }
 .containerRight{
     background: rgb(144, 133, 181);
     justify-content: flex-end;
     flex-direction: column;
-    width: 30%;
-    align-self: stretch;
+    width: 25%;
+    align-content: flex-end;
+    margin-top: 25px;
+    margin-right: 50px;
+    padding: 20px;
+    opacity: .8;
+}
+.containerRight h1 {
+    text-align: center;
 }
 
 
 .containerLeft{
-    margin: 0 auto;
+    align-content: flex-start;
     padding: 10px;
-    width: 75%;
+    width: 70%;
+    margin: auto;
 }
 
 .contentArticle {
@@ -25,11 +48,12 @@
 }
 .fishCard {
     border: 1px dotted black;
-    width: 75%;
+    width: 300px;
     text-align: center;
     background-color: rgb(144, 189, 203);
     padding: 10px;
     margin: 15px;
+    opacity: .8;
 }
 .fishCard p {
     margin: 0;
@@ -37,12 +61,28 @@
 .quoteCard {
     text-align:center;
     justify-content: space-around;
-    width: 75%;
+    width: 300px;
     border: 1px dotted black;
     padding: 10px;
     margin: 15px;
+    background-color: slategray;
+    opacity: .8;
 }
-.containerLeft__travelLocations {
-    width: 75%;
+.quoteCard p {
+    margin: 0 auto;
+}
+ .containerLeft__travelLocations {
+    width: 70%;
     justify-content: space-around;
+    margin: 15px;  
+}
+.locationCard {
+    text-align:center;
+    justify-content: space-around;
+    width: 300px;
+    border: 1px dotted black;
+    padding: 10px;
+    margin: 15px;
+    background-color: slategray;
+    opacity: .8;
 }
