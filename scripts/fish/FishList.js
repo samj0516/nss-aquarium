@@ -35,7 +35,7 @@ export const FishList = () => {
 
     // Add a section, and all of the fish to the DOM
     contentElement.innerHTML += `
-        <article class="fishList">
+        <article class="fishList contentArticle">
             ${fishHTMLRepresentations}
         </article>
     `
