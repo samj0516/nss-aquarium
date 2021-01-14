@@ -16,7 +16,7 @@ import { Fish } from "./Fish.js"
 
 export const FishList = () => {
 
-    const contentElement = document.querySelector(".content")
+    const contentElement = document.querySelector(".containerLeft")
     const fishes = useFish()
 
     // Generate all of the HTML for all of the fish
