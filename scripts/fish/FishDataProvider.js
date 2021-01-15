@@ -8,7 +8,7 @@ const fishCollection = [
     {
         name: "Bart",
         species: "dogfish shark",
-        length: "3-4 ft",
+        length: 45,
         diet: "jelly fish",
         location:"North Atlantic and Pacific",
         image: "images/dogFish.jpeg"
@@ -17,7 +17,7 @@ const fishCollection = [
     {
         name: "Nemo",
         species: "clownfish",
-        length: "5 in",
+        length: 3,
         diet: "plankton",
         location:"Great Barrier Reef, Australia",
         image: "images/clownfish.jpeg"
@@ -25,7 +25,7 @@ const fishCollection = [
     {
         name: "Jack Dempsy",
         species: "cichlid fish",
-        length: "10-15 in",
+        length: 16,
         diet: "carnivorous",
         location:"Southern Mexico",
         image: "images/jackdempsyFish.jpeg"
@@ -34,7 +34,7 @@ const fishCollection = [
     {
         name: "Leo",
         species: "lionfish",
-        length: "7-8 in",
+        length: 9,
         diet: "algae",
         location:"Indo-Pacific",
         image: "images/lionFish.jpeg"
@@ -43,7 +43,7 @@ const fishCollection = [
     {
         name: "Polly",
         species: "parrotfish",
-        length: "12-20 in",
+        length: 20,
         diet: "polyps",
         location:"Amazon Basin",
         image: "images/parrotFish.jpeg"
@@ -52,4 +52,38 @@ const fishCollection = [
 ]
 export const useFish = () => {
     return fishCollection.slice()
+}
+
+export const mostHolyFish = () => {
+    // 3, 6, 9, 12, etc... fish
+    const holyFish = []
+
+    for (const fishObj of fishCollection) {
+        if (fishObj.length % 3 === 0){
+            holyFish.push(fishObj)
+        }
+    }
+    return holyFish
+}
+
+export const soldierFish = () => {
+    // 5, 10, 15, 20, 25, etc... fish
+    const soldiers = []
+    for (const fishObj of fishCollection) {
+        if (fishObj.length % 5 === 0){
+            soldiers.push(fishObj)
+        }
+    }
+    return soldiers
+}
+
+export const nonHolyFish = () => {
+    // Any fish not a multiple of 3 or 5
+    const regFish = []
+    for (const fishObj of fishCollection) {
+        if (fishObj.length % 5 !== 0 && fishObj.length % 3 !== 0){
+            regFish.push(fishObj)
+        }
+    }
+    return regFish
 }

@@ -2,41 +2,46 @@
  *  FishList which renders individual fish objects as HTML
  */
 
-// TODO: Import `useFish` from the data provider module
-
-
-import { useFish } from './FishDataProvider.js'
 import { Fish } from "./Fish.js"
+import { mostHolyFish, nonHolyFish, soldierFish } from "./FishDataProvider.js"
 
-/**
- *   FishList which renders individual fish objects as HTML
- */
-// import { useFish } from "./FishDataProvider.js"
-// import { Fish } from "./Fish.js"
+const buildFishListHTML = (arrayOfFish, heading) => {
+
+    let fishHTMLRepresentation = `<h3>${heading}</h3>`
+    for (const fishObj of arrayOfFish) {
+  
+      fishHTMLRepresentation += Fish(fishObj)
+      console.log(fishHTMLRepresentation)
+    }
+  
+    return fishHTMLRepresentation
+  
+  }
+  
 
 export const FishList = () => {
 
     const contentElement = document.querySelector(".containerLeft")
-    const fishes = useFish()
-
-    // Generate all of the HTML for all of the fish
-    let fishHTMLRepresentations = ""
-    for (const fish of fishes) {
-        /*
-            Invoke the Fish component function
-            and pass the current fish object as an argument.
-            Each time, add the return value to the
-            fishHTMLRepresentations variable with `+=`
-        */
-       fishHTMLRepresentations += Fish(fish)
-       }
-        
     
+    const holyFishArray = mostHolyFish()
+    // console.log("holyFish", holyFishArray)
+    const holyFishHTMLRepresentation = buildFishListHTML(holyFishArray, "Holy Fish")
 
+    const soldierFishArray = soldierFish()
+    // console.log("soldierFish", soldierFishArray)
+    const soldierFishHTMLRepresentation = buildFishListHTML(soldierFishArray, "Soldier Fish")
+  
+    const regularFishArray = nonHolyFish()
+    // console.log("regularFish", regularFishArray)
+    const regularFishHTMLRepresentation = buildFishListHTML(regularFishArray, "Regular Fish")
+    
+        
     // Add a section, and all of the fish to the DOM
     contentElement.innerHTML += `
         <article class="fishList contentArticle">
-            ${fishHTMLRepresentations}
+            ${holyFishHTMLRepresentation}
+            ${soldierFishHTMLRepresentation}
+            ${regularFishHTMLRepresentation}
         </article>
     `
 }
